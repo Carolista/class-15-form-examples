@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>General Examples</title>
+  <script src="script.js"></script>
+</head>
+<body>
+  
+  <form>
+    <input type="number" id="quantity-input" name="quantity" />
+    <label for="quantity-input">Quantity</label>  
+  </form>
+
+
+
+  <form action="www.someURL.com" method="POST">
+
+    <input type="text" id="city-input" name="city" placeholder="e.g., Atlanta" />
+    <label for="city-input">City</label>
+
+    <input type="number" id="quantity-input" name="quantity" />
+    <label for="quantity-input">Quantity</label>   
+    
+    <input type="email" id="email-input" name="email" placeholder="e.g., john@gmail.com" />
+    <label for="email-input">Email Address</label>  
+
+    <input type="date" id="date-input" name="date" />
+    <label for="date-input">Date</label>    
+
+    <h4>Choose Ice Cream</h4>
+    <label><input type="radio" name="flavor" value="chocolate" checked />Chocolate</label>
+    <label><input type="radio" name="flavor" value="vanilla" />Vanilla</label>
+
+    <h4>Choose Toppings</h4>
+    <label><input type="checkbox" name="strawberries" checked /> M&Ms</label>
+    <label><input type="checkbox" name="chocolate" checked="true" /> Pecans</label>
+    <label><input type="checkbox" name="sauerkraut" /> Sauerkraut</label>
+    
+    <h4>Select Cone</h4>
+    <select name="cone">
+      <option value="" />Select one</label>
+      <option value="wafer" />Wafer</label>
+      <option value="sugar" />Sugar</label>
+      <option value="Waffle" />Waffle</label>
+    </select>
+
+    <button type="submit">Save Selections</button>
+    <button type="reset">Clear Form</button>
+
+  </form>
+  
+</body>
+</html>

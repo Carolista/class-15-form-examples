@@ -1,0 +1,164 @@
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  background-color: #006686;
+  color: white;
+  margin: 0px;
+  padding-left: 30px;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  margin: 30px 20%;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #0184ac;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin: 0px;
+  padding-left: 30px;
+}
+
+div {
+  display: flex;
+}
+
+h2 {
+  font-family: 'Zen Tokyo Zoo', sans-serif;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+label {
+  color: #aaa;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+input,
+select {
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  outline: none;
+}
+
+button {
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  padding: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+#card-bkg {
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 200;
+  height: 160px;
+  width: 310px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#card-text {
+  align-items: center;
+}
+
+#name {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+#phone-email {
+  font-size: 10px;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+.field-with-label {
+  flex-direction: column;
+  width: 260px;
+  margin-bottom: 8px;
+}
+
+.field-error {
+  border: 2px solid crimson;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.checkbox-label,
+#omit-address2 {
+  vertical-align: middle;
+  font-size: 0.6rem;
+}
+
+#omit-address2 {
+  margin-left: 12px;
+}
+
+#quantity-input {
+  width: 80px;
+}
+
+.radio-group > label {
+  color: #333;
+  text-transform: none;
+}
+
+#save-button {
+  background-color: #006686;
+  width: 80%;
+  margin-left: 10px;
+}
+#save-button:hover {
+  background-color: #0184ac;
+}
+#save-button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+#reset-button {
+  background-color: #9d1405;
+}
+#reset-button:hover {
+  background-color: #b81706;
+}
