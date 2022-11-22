@@ -121,6 +121,7 @@ window.addEventListener('load', function() {
     cardText.style.color = 'inherit';
     name.style.fontFamily = 'inherit';
     name.style.fontSize = '20px';
+    address2.style.display = 'block';
     // Disable save button
     saveButton.disabled = true;
   });
