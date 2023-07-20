@@ -151,10 +151,6 @@ button {
 #save-button:hover {
   background-color: #0184ac;
 }
-#save-button:disabled {
-  background-color: #ccc;
-  cursor: default;
-}
 
 #reset-button {
   background-color: #9d1405;
