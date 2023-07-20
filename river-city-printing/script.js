@@ -1,6 +1,6 @@
 window.addEventListener('load', function() {
 
-  // Elements to add/change content/styling
+  // Elements in card preview to add/change content/styling
   const cardBkg = document.getElementById('card-bkg');
   const cardText = document.getElementById('card-text');
   const name = document.getElementById('name');
@@ -8,9 +8,10 @@ window.addEventListener('load', function() {
   const address2 = document.getElementById('address2');
   const phoneEmail = document.getElementById('phone-email');
 
-  // TODO: Add form & input elements
+  // TODO: Add object for form
   const form = document.querySelector('form');
 
+  // TODO: Add objects for input elements
   const styleInput = document.getElementById('style-input');
   const nameInput = document.getElementById('name-input');
   const address1Input = document.getElementById('address1-input');
@@ -18,12 +19,8 @@ window.addEventListener('load', function() {
   const omitAddress2 = document.getElementById('omit-address2');
   const phoneInput = document.getElementById('phone-input');
   const emailInput = document.getElementById('email-input');
-  const quantityInput = document.getElementById('quantity-input');
-  const paperInput = document.querySelector('[name="paper-input"]')
 
-  let allFields = [styleInput, nameInput, address1Input, address2Input, phoneInput, emailInput, quantityInput, paperInput];
-
-  const saveButton = document.querySelector('#save-button');
+  // TODO: Add object for reset button
   const resetButton = document.querySelector('#reset-button');
   
   // TODO: Update styling of card preview based on input
@@ -66,23 +63,25 @@ window.addEventListener('load', function() {
       cardText.style.color = '#666';
       name.style.fontFamily = `'Cormorant SC', serif`;
       name.style.fontSize = '20px';
+    } else if (styleInput.value === '') {
+      cardBkg.style.backgroundImage = 'none'; 
+      cardBkg.style.justifyContent = 'center';
+      cardText.style.alignItems = 'center';
+      cardText.style.color = 'inherit';
+      name.style.fontFamily = 'inherit';
+      name.style.fontSize = '20px';    
     }
-    checkForCompletion();
   });
 
   // TODO: Update content of card preview with user input
-  // Later, call checkForCompletion() within each listener to enable save button if form is complete
   nameInput.addEventListener('input', function() {
-    name.innerHTML = nameInput.value;
-    checkForCompletion();
+    name.innerHTML = nameInput.value || "Your Name";
   });
   address1Input.addEventListener('input', function() {
-    address1.innerHTML = address1Input.value;
-    checkForCompletion();
+    address1.innerHTML = address1Input.value || "Your Address Line 1";
   });
   address2Input.addEventListener('input', function() {
-    address2.innerHTML = address2Input.value;
-    checkForCompletion();
+    address2.innerHTML = address2Input.value || "Your Address Line 2";
   });
   omitAddress2.addEventListener('input', function() {
     if (omitAddress2.checked) {
@@ -90,15 +89,12 @@ window.addEventListener('load', function() {
     } else {
       address2.style.display = 'block';
     }
-    checkForCompletion();
   });
   phoneInput.addEventListener('input', function() {
     phoneEmail.innerHTML = `${phoneInput.value} | ${emailInput.value || 'Your Email'}`;
-    checkForCompletion();
   });
   emailInput.addEventListener('input', function() {
     phoneEmail.innerHTML =  `${phoneInput.value || 'Your Phone'} | ${emailInput.value}`;
-    checkForCompletion();
   });
 
   // TODO: Add logic for resetting form & card preview
@@ -114,6 +110,7 @@ window.addEventListener('load', function() {
     address1.innerHTML = 'Your Address Line 1';
     address2.innerHTML = 'Your Address Line 2';
     phoneEmail.innerHTML = 'Your Phone | Your Email';
+
     // Reset styling on card preview
     cardBkg.style.backgroundImage = 'none'; 
     cardBkg.style.justifyContent = 'center';
@@ -122,32 +119,13 @@ window.addEventListener('load', function() {
     name.style.fontFamily = 'inherit';
     name.style.fontSize = '20px';
     address2.style.display = 'block';
-    // Disable save button
-    saveButton.disabled = true;
-  });
-  
-  // TODO: Console log a message when the save button is clicked
-  // This will run before any built-in validation
-  saveButton.addEventListener('click', function() {
-    console.log('Save button clicked.')
   });
 
   // TODO: Give user an alert after a successful form submission
   // This will run only after it passes built-in validation
-  form.addEventListener('submit', function() {
+  form.addEventListener('submit', function(event) {
     // We aren't really saving anything to a database in this example, but it's always good to give your user some feedback.
     alert('\nLooks great! Your custom design has been saved.\n');
   });
 
-  // Run through all input fields and verify required completion before enabling save button
-  function checkForCompletion() {
-    for (let i=0; i < allFields.length; i++) {
-      let field = allFields[i];
-      if (field.required && !field.value) {
-        saveButton.disabled = true;
-        return; 
-      }
-    }
-    saveButton.disabled = false;
-  };
 });
