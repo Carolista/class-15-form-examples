@@ -121,11 +121,11 @@ window.addEventListener('load', function() {
     address2.style.display = 'block';
   });
 
-  // TODO: Give user an alert after a successful form submission
+  // TODO: Console.log something after a successful form submission
   // This will run only after it passes built-in validation
   form.addEventListener('submit', function(event) {
-    // We aren't really saving anything to a database in this example, but it's always good to give your user some feedback.
-    alert('\nLooks great! Your custom design has been saved.\n');
+    // We aren't really saving anything to a database in this example, but this is where we would do it
+    console.log("Form successfully submitted.");
   });
 
 });

@@ -158,3 +158,11 @@ button {
 #reset-button:hover {
   background-color: #b81706;
 }
+
+#thank-you {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: 1000px;
+  margin: 30px auto 600px;
+}
